@@ -9,7 +9,7 @@ const Feed = () => {
 
   useEffect(() => {
     try {
-      fetch(`http://localhost:5000/post`, {
+      fetch(`${window.getBackendServer()}/post`, {
         method: "GET",
       })
         .then((res) => res.json())

@@ -51,7 +51,7 @@ const Tweetbox = () => {
     e.preventDefault();
 
     if (user?.providerData[0]?.providerId === "password") {
-      fetch(`http://localhost:5000/loggedinuser?email=${email}`)
+      fetch(`${window.getBackendServer()}/loggedinuser?email=${email}`)
         .then((res) => res.json())
         .then((data) => {
           setName(data[0]?.name);
@@ -75,7 +75,7 @@ const Tweetbox = () => {
       setPost("");
       setImageUrl("");
 
-      fetch("http://localhost:5000/post", {
+      fetch(`${window.getBackendServer()}/post`, {
         method: "POST",
         headers: {
           "content-type": "application/json",

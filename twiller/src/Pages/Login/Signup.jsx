@@ -34,7 +34,7 @@ const SignUp = () => {
         password,
       };
 
-      fetch("http://localhost:5000/register", {
+      fetch(`${window.getBackendServer()}/register`, {
         method: "POST",
         headers: {
           "content-type": "application/json",
@@ -67,7 +67,7 @@ const SignUp = () => {
 
       const user = { displayName, email, photoURL };
 
-      fetch("http://localhost:5000/register", {
+      fetch(`${window.getBackendServer()}/register`, {
         method: "POST",
         headers: {
           "content-type": "application/json",

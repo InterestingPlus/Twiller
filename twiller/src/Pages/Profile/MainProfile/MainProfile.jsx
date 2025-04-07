@@ -36,7 +36,7 @@ const MainProfile = ({ user }) => {
 
   useEffect(() => {
     try {
-      fetch(`http://localhost:5000/userpost?email=${user?.email}`, {
+      fetch(`${window.getBackendServer()}/userpost?email=${user?.email}`, {
         method: "GET",
       })
         .then((res) => res.json())
@@ -69,7 +69,7 @@ const MainProfile = ({ user }) => {
         setIsLoading(false);
 
         if (url) {
-          fetch(`http://localhost:5000/userupdate/${user?.email}`, {
+          fetch(`${window.getBackendServer()}/userupdate/${user?.email}`, {
             method: "PATCH",
             headers: {
               "content-type": "application/json",
@@ -113,7 +113,7 @@ const MainProfile = ({ user }) => {
         setIsLoading(false);
 
         if (url) {
-          fetch(`http://localhost:5000/userupdate/${user?.email}`, {
+          fetch(`${window.getBackendServer()}/userupdate/${user?.email}`, {
             method: "PATCH",
             headers: {
               "content-type": "application/json",

@@ -8,7 +8,7 @@ const useLoggedinUser = () => {
 
   useEffect(() => {
     if (!email) return;
-    fetch(`http://localhost:5000/loggedinuser?email=${email}`)
+    fetch(`${window.getBackendServer()}/loggedinuser?email=${email}`)
       .then((res) => res.json())
       .then((data) => {
         setLoggedinUser(data);
