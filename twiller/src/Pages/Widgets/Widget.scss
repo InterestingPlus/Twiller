@@ -1,0 +1,78 @@
+.widgets {
+  flex: 0.3;
+
+  overflow-y: scroll;
+
+  width: 30vw;
+  min-width: 350px;
+  max-width: 350px;
+  height: 100vh;
+  max-height: 100dvh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding-block: 1.4rem;
+}
+
+.widgets::-webkit-scrollbar {
+  display: none;
+}
+
+.widgets__input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+
+  background-color: var(--twitter-background);
+  border-radius: 50px;
+  border: 2px solid #ffffff5a;
+
+  padding: 10px 20px;
+  width: 100%;
+}
+
+.widgets__input > input {
+  border: none;
+  margin-top: 0px;
+
+  width: 100%;
+
+  color: #ffffff;
+  background: var(--twitter-background);
+  outline: none;
+
+  &::placeholder {
+    color: #c9c9c9;
+  }
+}
+
+.widgets__searchIcon {
+  color: #c9c9c9;
+}
+
+.widgets__widgetContainer {
+  margin-top: 15px;
+  // margin-right: 20px;
+  width: 100%;
+  height: 100%;
+
+  padding: 20px;
+  background-color: #f5f8fa;
+  border-radius: 20px;
+
+  & > h2 {
+    font-size: 18px;
+    font-weight: 800;
+    color: #b5b5b5;
+    margin-bottom: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 688px) {
+  .widgets {
+    display: none;
+  }
+}
