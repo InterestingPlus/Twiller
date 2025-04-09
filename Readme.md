@@ -1,8 +1,4 @@
-<p align="center">
-  <img src="https://twiller-project.netlify.app/logo512.png" width="120" alt="Twiller Logo"/>
-</p>
-
-<h1 align="center">Twiller - A Twitter Clone 🚀</h1>
+# Twiller - A Twitter Clone 🚀
 
 **Live Project:** [twiller-project.netlify.app](https://twiller-project.netlify.app)
 
@@ -34,6 +30,10 @@ Twiller is a full-stack Twitter clone developed during my Full Stack Development
 - File upload handling and cloud integration
 - Deployments on Netlify and Render
 
+## 🖼️ Screenshots
+
+_(Add some screenshots if possible)_
+
 ## 🚀 How to Run Locally
 
 1. Clone the repository
@@ -41,11 +41,7 @@ Twiller is a full-stack Twitter clone developed during my Full Stack Development
 3. Add Firebase & MongoDB credentials
 4. Run the development server
 
+## 📫 Contact
 
-<p align="center">
-  Built with 💙 by **Jatin Poriya**  
-</p>
-<p align="center">
-  
-  [LinkedIn](https://www.linkedin.com/in/jatin-poriya) • [Portfolio](https://jatinporiya.netlify.app)
-</p>
+Made with 💙 by **Jatin Poriya**  
+[LinkedIn](https://www.linkedin.com/) • [Portfolio](#)
