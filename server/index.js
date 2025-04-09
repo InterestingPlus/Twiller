@@ -25,11 +25,18 @@ async function run() {
 
     app.post("/register", async (req, res) => {
       const user = req.body;
+      console.log(user);
 
+      const alreadyUser = await userCollection.findOne({
+        email: user.email,
+      });
+      if (alreadyUser) {
+        console.log("User Already Exists");
+        return res.send("User Already Exists");
+      }
       const result = await userCollection.insertOne(user);
 
       console.log("REgister : ", result);
-
       res.send(result);
     });
 
