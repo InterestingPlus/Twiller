@@ -9,44 +9,20 @@ import {
   Publish,
 } from "@mui/icons-material";
 import LikeButton from "./LikeButton/LikeButton";
-
 import { useUserAuth } from "../../../context/userAuthContext";
 
 const Post = ({ p }) => {
-  const { _id: postId, name, username, photo, post, profilePhoto, likes } = p;
+  const { _id, name, username, photo, post, profilePhoto, likes } = p;
 
-  let defaultLike = likes ? likes + 1 : 1;
+  let likesCount = Array.isArray(likes) ? likes.length : 0;
 
-  const [likeCount, setLikeCount] = useState(defaultLike);
-
-  const { user } = useUserAuth();
+  const [likeCount, setLikeCount] = useState(likesCount);
 
   const handleLikeCount = (count) => {
     setLikeCount(count);
-
-    const newLikeCount = {
-      likes: count,
-    };
-
-    if (count != undefined) {
-      fetch(`${window.getBackendServer()}/likeupdate/${postId}`, {
-        method: "PATCH",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify(newLikeCount),
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          console.log("Updated! ", data);
-        })
-        .catch((error) => {
-          console.log("Error Updating Likes : ", error);
-        });
-    } else {
-      console.log("same", defaultLike, count);
-    }
   };
+
+  const { user } = useUserAuth();
 
   return (
     <div className="post">
@@ -83,6 +59,8 @@ const Post = ({ p }) => {
                 <LikeButton
                   count={likeCount}
                   handleLikeCount={handleLikeCount}
+                  postId={_id}
+                  users={likes}
                 />
                 <div className="footer__icon" title="Share">
                   <Publish />

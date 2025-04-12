@@ -106,7 +106,7 @@ const SignUp = () => {
         <img
           className="image"
           src="https://raw.githubusercontent.com/BitHeadmr/twiller-twitterclone/refs/heads/main/twiller/src/image/twitter.jpeg"
-          alt="Twitter Image"
+          alt="Twitter Logo"
         />
       </div>
 

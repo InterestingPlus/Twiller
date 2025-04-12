@@ -21,8 +21,6 @@ const Feed = () => {
     }
   }, [posts]);
 
-  console.log(posts);
-
   return (
     <div className="primary feed">
       <div className="feed__header">
